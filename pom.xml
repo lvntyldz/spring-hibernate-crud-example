@@ -12,26 +12,9 @@
         <java-version>1.7</java-version>
         <org.slf4j-version>1.6.6</org.slf4j-version>
         <tiles-version>3.0.1</tiles-version>
-        <mysql.connector.version>8.0.15</mysql.connector.version>
-        <hibernate.version>3.6.3.Final</hibernate.version>
     </properties>
 
     <dependencies>
-
-        <!--Hibernate -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>${hibernate.version}</version>
-        </dependency>
-
-        <!-- connect to mysql -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql.connector.version}</version>
-        </dependency>
-
         <!-- Tiles -->
         <dependency>
             <groupId>org.apache.tiles</groupId>
@@ -112,8 +95,8 @@
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>1.6</source>
+                    <target>1.6</target>
                 </configuration>
             </plugin>
             <plugin>
