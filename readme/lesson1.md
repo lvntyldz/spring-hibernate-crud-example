@@ -86,6 +86,21 @@ public class Person implements Serializable {
     }
 ```
 
+- Oluşturulan tabloları  SQL browserdan görüntüleme
+```
+SHOW TABLES;
+```
+
+- insert değerlerini görüntüleme
+```
+SELECT * FROM PERSON
+```
+
+- loglardan insert cümlerlerini görüntüleme
+```
+Hibernate: insert into Person (name) values (?)
+```
+
 - proje yapısı
 
 <img width="320px"  src="https://github.com/lvntyldz/spring-hibernate-crud-example/blob/lesson1/images/lesson1/projectStructure.png?raw=true" />
