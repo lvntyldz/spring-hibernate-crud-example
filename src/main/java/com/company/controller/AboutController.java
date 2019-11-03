@@ -1,5 +1,8 @@
 package com.company.controller;
 
+import com.company.domain.Person;
+import com.company.util.HibernateUtil;
+import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -15,6 +18,16 @@ public class AboutController {
     @RequestMapping(value = "/about", method = RequestMethod.GET)
     public ModelAndView about() {
         ModelAndView mv = new ModelAndView("about");
+
+        Session session = HibernateUtil.getSession().openSession();
+
+        session.beginTransaction();
+        Person person = new Person();
+        person.setName("alioğlu");
+
+        session.save(person);
+        session.getTransaction().commit();
+
         return mv;
     }
 
