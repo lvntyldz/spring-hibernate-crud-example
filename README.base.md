@@ -1,7 +1,7 @@
 # base spring project
 
 
-###içerik
+### içerik
 - apache tiles ile layout yapısı.
 - bootstrap görüntüsü
 - farklı içeriklerde login, home ve about sayfaları
@@ -29,5 +29,7 @@
 <mvc:resources mapping="/static/**" location="/resources/"/>
 ```
 
+
 - proje yapısı
+
 <img width="320px"  src="https://github.com/lvntyldz/spring-hibernate-crud-example/blob/base/images/base/projectStructure.png?raw=true" />
