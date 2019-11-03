@@ -5,12 +5,28 @@
 <hibernate-configuration>
 
     <session-factory>
+
+        <!-- SQLITE -->
+        <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
+        <!-- <property name="hibernate.connection.url">jdbc:sqlite:badb.db</property> -->
+        <property name="hibernate.connection.url">
+            jdbc:sqlite://Users/leventyildiz/DEVELOPMENT/GIT/BA/spring-hibernate-crud-example/target/badb.db
+        </property>
+        <property name="hibernate.connection.username"></property>
+        <property name="hibernate.connection.password"></property>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLiteDialect</property>
+
+        <!-- MySQL-->
+        <!--
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost/ba</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">1234567890</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        -->
+
         <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
         <!--<property name="hbm2ddl.auto">validate</property>-->
         <!--<property name="hbm2ddl.auto">update</property>-->
         <property name="hbm2ddl.auto">create-drop</property>
