@@ -19,14 +19,25 @@ public class AboutController {
     public ModelAndView about() {
         ModelAndView mv = new ModelAndView("about");
 
-        Session session = HibernateUtil.getSession().openSession();
+        //create session
+        Session session = HibernateUtil.openSession();
 
+        //start transactions
         session.beginTransaction();
+
         Person person = new Person();
-        person.setName("alioğlu");
+        person.setName("Ali");
+        person.setLastName("ALİOĞLU");
+        person.setAge(20);
+        person.setStudent(true);
 
         session.save(person);
+
+        //commit transaction
         session.getTransaction().commit();
+
+        //close session
+        session.close();
 
         return mv;
     }

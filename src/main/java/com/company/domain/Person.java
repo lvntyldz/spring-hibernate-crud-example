@@ -1,19 +1,28 @@
 package com.company.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Table(name = "persons")
 public class Person implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private int id;
 
+    @Column(name = "firstname", nullable = false, length = 25)
     private String name;
+
+    @Column(name = "lastname", nullable = false, length = 25)
+    private String lastName;
+
+    @Column(name = "age", nullable = false, length = 6)
+    private int age;
+
+    @Column(name = "is_student", nullable = false)
+    private boolean student;
 
     public int getId() {
         return id;
@@ -29,5 +38,29 @@ public class Person implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public boolean isStudent() {
+        return student;
+    }
+
+    public void setStudent(boolean student) {
+        this.student = student;
     }
 }
