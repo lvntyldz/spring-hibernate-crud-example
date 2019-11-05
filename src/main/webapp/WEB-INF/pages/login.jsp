@@ -1,4 +1,5 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@ page pageEncoding="UTF-8" %>
 
 <tiles:insertDefinition name="singleLayout">
     <tiles:putAttribute name="body">

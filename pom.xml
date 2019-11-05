@@ -16,9 +16,16 @@
         <sqlite.dialect.version>1.0</sqlite.dialect.version>
         <mysql.connector.version>8.0.15</mysql.connector.version>
         <hibernate.version>5.2.12.Final</hibernate.version>
+        <jslt.version>1.2</jslt.version>
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jslt.version}</version>
+        </dependency>
 
         <!--Hibernate -->
         <dependency>

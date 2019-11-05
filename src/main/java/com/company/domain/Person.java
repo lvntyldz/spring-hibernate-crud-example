@@ -63,4 +63,15 @@ public class Person implements Serializable {
     public void setStudent(boolean student) {
         this.student = student;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", student=" + student +
+                '}';
+    }
 }
