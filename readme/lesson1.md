@@ -2,7 +2,28 @@
 
 
 ### içerik
+
+- DB ile Java Kodları arasında köprü görevi gören bir ORM(Object-Relational Mapping) dir
+
+<img width="320px"  src="https://github.com/lvntyldz/spring-hibernate-crud-example/blob/lesson1/images/lesson1/hibernateOrm?raw=true" />
+
+- Avantajları
+    - Oracle,MsSQL,MySQL gibi DB değişikliklerinde kolaylık sağlar. Sorguları kendisi DB'ye göre uyarlar
+    - Java kodunun içinde SQL cümleleri gizlenmiş olur.
+    - DB implementasyonunu beklemeden kod yazımına devam edilebilir.
+    - Hızlı yazılım geliştirme sağlar(developerlar için)
+    - Transaction yönetimi ve otomotik key generate kontrolünü devr alır.
+
+
+- Birkaç Java ORM framework'ü
+    - Eclipse Link
+    - Hibernate
+    - OpenJPA
+    - TopLink
+
+
 - hibernate JAR'ın POM'a eklenmesi
+
 ```
 <!--Hibernate -->
 <dependency>
@@ -11,6 +32,7 @@
     <version>${hibernate.version}</version>
 </dependency>
 ```
+
 
 - mysql JAR'ın POM'a eklenmesi
 
@@ -49,6 +71,7 @@
 ```
 
 - log4j.properties dosyasının projeye eklenmesi ve INFO level loglama
+
 ```
 # Log all JDBC parameters
 #log4j.logger.org.hibernate.type=ERROR
@@ -58,7 +81,8 @@ log4j.logger.org.hibernate=INFO
 
 
 
-- ilk entity'nin oluşturulması
+- ilk entity'nin oluşturulması (Hibernate Objesi olabilmesi için @Entity ve @Id zorunludur)
+
 ```
 @Entity
 public class Person implements Serializable {
@@ -74,6 +98,7 @@ public class Person implements Serializable {
 ```
 
 - HibernateUtil ile sessionFactory oluşturma
+
 ```
     private static final SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 
@@ -87,19 +112,25 @@ public class Person implements Serializable {
 ```
 
 - Oluşturulan tabloları  SQL browserdan görüntüleme
+
 ```
 SHOW TABLES;
 ```
 
+
 - insert değerlerini görüntüleme
+
 ```
 SELECT * FROM PERSON
 ```
 
+
 - loglardan insert cümlerlerini görüntüleme
+
 ```
 Hibernate: insert into Person (name) values (?)
 ```
+
 
 - proje yapısı
 
