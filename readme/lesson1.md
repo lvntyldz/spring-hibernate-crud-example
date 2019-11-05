@@ -5,7 +5,8 @@
 
 - DB ile Java Kodları arasında köprü görevi gören bir ORM(Object-Relational Mapping) dir
 
-<img width="320px"  src="https://github.com/lvntyldz/spring-hibernate-crud-example/blob/lesson1/images/lesson1/hibernateOrm?raw=true" />
+<img width="320px"  src="https://github.com/lvntyldz/spring-hibernate-crud-example/blob/lesson1/images/lesson1/hibernateOrm.png?raw=true" />
+
 
 - Avantajları
     - Oracle,MsSQL,MySQL gibi DB değişikliklerinde kolaylık sağlar. Sorguları kendisi DB'ye göre uyarlar
