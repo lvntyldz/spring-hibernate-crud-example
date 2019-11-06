@@ -105,3 +105,7 @@ Hibernate:
     where
         id=?
 ```
+
+- proje yapısı
+
+<img width="320px"  src="https://github.com/lvntyldz/spring-hibernate-crud-example/blob/lesson5/images/lesson5/projectStructure.png?raw=true" />
