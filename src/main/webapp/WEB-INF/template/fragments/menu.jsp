@@ -19,6 +19,7 @@
                 <li class="active"><a href="${pageContext.request.contextPath}/home">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li><a href="${pageContext.request.contextPath}/about">About</a></li>
+                <li><a href="${pageContext.request.contextPath}/person">Person</a></li>
                 <li><a href="#">Services</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
