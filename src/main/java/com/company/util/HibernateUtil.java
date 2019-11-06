@@ -1,5 +1,6 @@
 package com.company.util;
 
+import com.company.domain.Employee;
 import com.company.domain.Person;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -7,6 +8,10 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
 import javax.persistence.NoResultException;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 public class HibernateUtil {
@@ -50,4 +55,54 @@ public class HibernateUtil {
     public static void closeSession() {
         sessionFactory.close();
     }
+
+    public List<Employee> findAllEmployee() {
+        CriteriaQuery<Employee> criteriaQuery = openSession().getCriteriaBuilder().createQuery(Employee.class);
+        criteriaQuery.from(Employee.class);
+
+        Query<Employee> query = openSession().createQuery(criteriaQuery);
+        List<Employee> result = query.getResultList();
+
+        return result;
+    }
+
+    public Employee findEmployeeById(int employeeId) {
+        CriteriaBuilder criteriaBuilder = openSession().getCriteriaBuilder();
+        CriteriaQuery<Employee> criteriaQuery = criteriaBuilder.createQuery(Employee.class);
+        Root<Employee> employeeRoot = criteriaQuery.from(Employee.class);
+
+        Predicate likeRestriction = criteriaBuilder.and(
+                criteriaBuilder.equal(employeeRoot.get("id"), employeeId)
+        );
+
+        criteriaQuery.where(likeRestriction);
+
+        Query<Employee> query = openSession().createQuery(criteriaQuery);
+        Employee result = query.uniqueResult();
+
+        return result;
+
+    }
+
+    public List<Employee> findEmployeeBy() {
+        CriteriaBuilder criteriaBuilder = openSession().getCriteriaBuilder();
+        CriteriaQuery<Employee> criteriaQuery = criteriaBuilder.createQuery(Employee.class);
+        Root<Employee> employeeRoot = criteriaQuery.from(Employee.class);
+
+        Predicate likeRestriction = criteriaBuilder.and(
+                //lastName != lastname
+                criteriaBuilder.like(employeeRoot.get("lastName"), "%YIL%"),
+                criteriaBuilder.notLike(employeeRoot.get("name"), "%Ali%")
+        );
+
+        criteriaQuery.where(likeRestriction);
+
+        Query<Employee> query = openSession().createQuery(criteriaQuery);
+        List<Employee> resultList = query.getResultList();
+
+        return resultList;
+
+    }
+
+
 }
