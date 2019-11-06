@@ -1,5 +1,6 @@
 package com.company.controller;
 
+import com.company.domain.Contact;
 import com.company.domain.Employee;
 import com.company.util.HibernateUtil;
 import org.hibernate.Session;
@@ -93,9 +94,16 @@ public class EmployeeController {
         //start transactions
         session.beginTransaction();
 
+        Contact contact = new Contact();
+        contact.setAddress("İstanbul");
+        contact.setEmail("aa@bb.cc");
+        contact.setPhone("02121234567");
+
         Employee employee = new Employee();
         employee.setName(firstName);
         employee.setLastName(lastName);
+        employee.setContact(contact);
+
 
         session.save(employee);
 

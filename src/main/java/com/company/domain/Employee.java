@@ -21,6 +21,13 @@ public class Employee implements Serializable {
     @Column(name = "age", nullable = false, length = 6)
     private int age;
 
+    //@Transient
+    @Transient
+    private boolean newRecord;
+
+    @Embedded
+    private Contact contact;
+
     public int getId() {
         return id;
     }
@@ -53,6 +60,22 @@ public class Employee implements Serializable {
         this.age = age;
     }
 
+    public boolean isNewRecord() {
+        return newRecord;
+    }
+
+    public void setNewRecord(boolean newRecord) {
+        this.newRecord = newRecord;
+    }
+
+    public Contact getContact() {
+        return contact;
+    }
+
+    public void setContact(Contact contact) {
+        this.contact = contact;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -60,6 +83,8 @@ public class Employee implements Serializable {
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
+                ", newRecord=" + newRecord +
+                ", contact=" + contact +
                 '}';
     }
 }

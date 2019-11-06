@@ -33,6 +33,8 @@
 
         <mapping class="com.company.domain.Person"></mapping>
         <mapping class="com.company.domain.Employee"></mapping>
+        <mapping class="com.company.domain.Contact"></mapping>
+
     </session-factory>
 
 </hibernate-configuration>
