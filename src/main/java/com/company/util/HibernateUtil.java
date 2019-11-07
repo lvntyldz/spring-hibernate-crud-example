@@ -2,6 +2,7 @@ package com.company.util;
 
 import com.company.domain.Employee;
 import com.company.domain.Person;
+import com.company.domain.Post;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -104,5 +105,18 @@ public class HibernateUtil {
 
     }
 
+    public Post findPostById(int id) {
+        Query query = openSession().createQuery("from Post where id=:id");
+        query.setParameter("id", id);
 
+        try {
+            return (Post) query.getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        }
+    }
+
+    public List<Post> findAllPost() {
+        return openSession().createQuery("from Post ").list();
+    }
 }

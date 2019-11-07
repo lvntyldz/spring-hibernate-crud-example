@@ -21,6 +21,7 @@
                 <li><a href="${pageContext.request.contextPath}/about">About</a></li>
                 <li><a href="${pageContext.request.contextPath}/person">Person</a></li>
                 <li><a href="${pageContext.request.contextPath}/employee">Employee</a></li>
+                <li><a href="${pageContext.request.contextPath}/post">Post</a></li>
                 <li><a href="#">Services</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
