@@ -15,7 +15,7 @@
         <tiles-version>3.0.1</tiles-version>
         <sqlite.jdbc.version>3.7.2</sqlite.jdbc.version>
         <sqlite.dialect.version>1.0</sqlite.dialect.version>
-        <mysql.connector.version>8.0.15</mysql.connector.version>
+        <mysql.connector.version>8.0.16</mysql.connector.version>
         <hibernate.version>5.2.12.Final</hibernate.version>
         <jslt.version>1.2</jslt.version>
     </properties>
